@@ -1,0 +1,10 @@
+[Unit]
+Description=Silent Sound Service
+After=sound.target
+
+[Service]
+ExecStart=/usr/bin/ffplay -f lavfi -i anullsrc=channel_layout=2:sample_rate=48000 -nodisp -loglevel quiet
+Restart=always
+
+[Install]
+WantedBy=default.target
