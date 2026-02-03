@@ -11,8 +11,13 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="agnoster"
 
 #Aliases
-alias update='sudo pacman -Syu'
+alias update all='sudo pacman -Syu'
 alias yay='paru'
+alias install='sudo pacman -S'
+alias uninstall='sudo pacman -Runs'
+
+alias neovim='nvim'
+export EDITOR='neovim'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
