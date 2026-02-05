@@ -3,12 +3,17 @@
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+
+ZSH_THEME=""
+
+# If it's a custom theme not apart of the original zsh git repo, fpath can
+# be targeted into a cloned repo
 
 #Aliases
 alias update all='sudo pacman -Syu'
@@ -86,6 +91,9 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+fpath+=($ZSH_CUSTOM/prompts/pure)
+autoload -Uz promptinit; promptinit
+prompt pure
 
 # User configuration
 
@@ -104,20 +112,3 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-(cat ~/.cache/wal/sequences &)
-
-wal -R
-
-export PATH=$PATH:/home/rob/.spicetify
