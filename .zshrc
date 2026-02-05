@@ -3,17 +3,13 @@
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+export ZSH_CUSTOM="$HOME/.config/oh-my-zsh/custom"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-
 ZSH_THEME=""
-
-# If it's a custom theme not apart of the original zsh git repo, fpath can
-# be targeted into a cloned repo
 
 #Aliases
 alias update all='sudo pacman -Syu'
@@ -24,6 +20,23 @@ alias uninstall='sudo pacman -Runs'
 alias neovim='nvim'
 export EDITOR='neovim'
 
+# Plugins and prompts
+
+plugins=(
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+	zsh-256color
+)
+
+# Load and initiate Pure theme
+fpath+=($ZSH_CUSTOM/prompts/pure)
+autoload -U promptinit; promptinit
+prompt pure
+
+# Sources
+
+source $ZSH/oh-my-zsh.sh
+source $ZSH_CUSTOM/
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -84,18 +97,7 @@ export EDITOR='neovim'
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-	zsh-autosuggestions
-	zsh-syntax-highlighting
-	zsh-256color
-)
 
-source $ZSH/oh-my-zsh.sh
-fpath+=($ZSH_CUSTOM/prompts/pure)
-autoload -Uz promptinit; promptinit
-prompt pure
-
-# User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -112,3 +114,15 @@ prompt pure
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+#
