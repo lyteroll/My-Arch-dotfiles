@@ -7,11 +7,11 @@ return
       "MunifTanjim/nui.nvim",
       "nvim-tree/nvim-web-devicons", -- optional, but recommended
     },
---   lazy = false, -- neo-tree will lazily load itself
+--    lazy = false, -- neo-tree will lazily load itself
 --  },
 
   config = function()
-      vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {})
+      vim.keymap.set('n', '<leader>mn', ':Neotree filesystem reveal left<CR>', {})
       vim.keymap.set('n', '<leader>bf', ':Neotree buffers reveal float<CR>', {})
   end,
 }
