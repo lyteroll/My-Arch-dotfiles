@@ -10,6 +10,5 @@ return {
 	autotage = { enable = true },
 	ensure_installed = { "lua", }
     })
-
   end
 }
