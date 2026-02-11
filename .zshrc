@@ -12,7 +12,7 @@ export ZSH_CUSTOM="$HOME/.config/oh-my-zsh/custom"
 ZSH_THEME=""
 
 #Aliases
-alias update all='sudo pacman -Syu'
+alias updatea='sudo pacman -Syu'
 alias yay='paru'
 alias install='sudo pacman -S'
 alias uninstall='sudo pacman -Runs'
@@ -37,6 +37,7 @@ prompt pure
 
 source $ZSH/oh-my-zsh.sh
 source $ZSH_CUSTOM/
+source $HOME/.cargo
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
