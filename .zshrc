@@ -17,9 +17,7 @@ alias yay='paru'
 alias install='sudo pacman -S'
 alias uninstall='sudo pacman -Runs'
 
-alias neovim='nvim'
-export EDITOR='neovim'
-
+export EDITOR=nvim
 # Plugins and prompts
 
 plugins=(
